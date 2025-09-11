@@ -23,13 +23,23 @@ import (
 
 func main() {
 	var x int
+	var y int
 	pointerX := &x
-	var pointerXy = &x
+	var pointerXy *int = &y
 	fmt.Println(pointerX, *pointerX, *pointerXy)
 	changeValueVar(pointerX)
-	fmt.Println(*pointerX)
+	fmt.Println(*pointerX, *pointerXy)
+	swap(pointerX, pointerXy)
+	fmt.Println(*pointerX, *pointerXy)
+	var point *int = new(int)
+	*point = 5
+	fmt.Println(point, *point)
 }
 
 func changeValueVar(pointer *int) {
 	*pointer++
+}
+
+func swap(pointerX *int, pointerY *int) {
+	*pointerX, *pointerY = *pointerY, *pointerX
 }
