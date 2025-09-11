@@ -1,38 +1,35 @@
+// Основы указателей
+// Объявление и инициализация указателей
+
+// Объявите переменную x, создайте указатель на нее, выведите адрес и разыменованное значение через указатель.
+
+// Попробуйте объявить указатель без инициализации, выведите его значение (nil).
+
+// Изменение значения через указатель
+
+// Передайте указатель в функцию, внутри которой измените значение переменной через указатель. Покажите, что оригинальная переменная изменилась.
+
+// Для закрепления — напишите функцию swap, меняющую местами два числа по указателям.
+
+// new и разыменование
+
+// Используйте функцию new() для выделения памяти под int, разыменуйте указатель и присвойте значение.
+
 package main
 
 import (
 	"fmt"
-	"os"
 )
 
 func main() {
-	var str, sep string
-	for i := 0; i < len(os.Args); i++ {
-		str += sep + os.Args[i]
-		sep = " "
-	}
-	fmt.Println(str)
+	var x int
+	pointerX := &x
+	var pointerXy = &x
+	fmt.Println(pointerX, *pointerX, *pointerXy)
+	changeValueVar(pointerX)
+	fmt.Println(*pointerX)
 }
 
-// func main() {
-// 	for index, arg := range os.Args[0:] {
-// 		fmt.Printf("%d: %s\n", index, arg)
-// 	}
-
-// }
-
-// func main() {
-// 	counts := make(map[string]int)
-// 	input := bufio.NewScanner(os.Stdin)
-// 	for input.Scan() {
-// 		if input.Text() == "" {
-// 			break
-// 		}
-// 		counts[input.Text()]++
-// 	}
-// 	for line, n := range counts {
-// 		if n > 1 {
-// 			fmt.Println(n, line)
-// 		}
-// 	}
-// }
+func changeValueVar(pointer *int) {
+	*pointer++
+}
