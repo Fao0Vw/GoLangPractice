@@ -1,6 +1,6 @@
 //Работа с передачей в функции неограниченного кол-ва аргументов
 
-package myPackage
+package main
 
 func FindMin(nums ...int) int {
 	min := nums[0]
