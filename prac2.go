@@ -4,9 +4,9 @@ package main
 
 func FindMin(nums ...int) int {
 	min := nums[0]
-	for _, i := range nums {
-		if i < min {
-			min = i
+	for _, v := range nums {
+		if v < min {
+			min = v
 		}
 	}
 	return min
@@ -14,9 +14,9 @@ func FindMin(nums ...int) int {
 
 func FindMax(nums ...int) int {
 	max := nums[0]
-	for _, i := range nums {
-		if i > max {
-			max = i
+	for _, v := range nums {
+		if v > max {
+			max = v
 		}
 	}
 	return max
